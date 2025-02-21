@@ -1,0 +1,95 @@
+[gd_scene load_steps=10 format=3 uid="uid://bfrvo6wijr0m4"]
+
+[ext_resource type="Texture2D" uid="uid://bqrp4psksfcu4" path="res://PNG/Green/Default/button_rectangle_flat.png" id="1_3cub6"]
+[ext_resource type="FontFile" uid="uid://bcfarl2mgal5b" path="res://Font/Kenney Future.ttf" id="1_cstba"]
+[ext_resource type="Script" path="res://main.gd" id="1_tpk2g"]
+[ext_resource type="Texture2D" uid="uid://fxgif72h8fvm" path="res://PNG/Green/Default/button_square_gradient.png" id="2_sjidk"]
+[ext_resource type="Texture2D" uid="uid://cb73a1fh4gl1d" path="res://Vector/Green/button_rectangle_gradient.svg" id="3_mpgdc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v2p78"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c0vtx"]
+texture = ExtResource("1_3cub6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wtgoy"]
+texture = ExtResource("2_sjidk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q3ag1"]
+texture = ExtResource("3_mpgdc")
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tpk2g")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -216.0
+offset_top = -48.0
+offset_right = 216.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_cstba")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_v2p78")
+theme_override_styles/hover = SubResource("StyleBoxTexture_c0vtx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_wtgoy")
+theme_override_styles/normal = SubResource("StyleBoxTexture_q3ag1")
+text = "Increase"
+
+[node name="score_label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 83.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_cstba")
+theme_override_font_sizes/font_size = 60
+text = "Score: 0
+"
+
+[node name="time_left" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -430.0
+offset_top = 104.0
+offset_right = 430.0
+offset_bottom = 187.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_cstba")
+theme_override_font_sizes/font_size = 60
+text = "time left: 0 seconds
+"
+
+[node name="aim_score" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -430.0
+offset_top = 496.0
+offset_right = 430.0
+offset_bottom = 579.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_cstba")
+theme_override_font_sizes/font_size = 60
+text = "aim score: 0
+"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

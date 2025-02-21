@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://hvbrnscb8hrq"]
+
+[ext_resource type="FontFile" uid="uid://bcfarl2mgal5b" path="res://Font/Kenney Future.ttf" id="1_j6nls"]
+[ext_resource type="Texture2D" uid="uid://x16qj8j2yr6m" path="res://PNG/Red/Double/button_rectangle_gradient.png" id="2_e2xq8"]
+[ext_resource type="Texture2D" uid="uid://8esqm8fkungl" path="res://PNG/Red/Double/button_rectangle_flat.png" id="3_oypcn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ysips"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1cqvv"]
+texture = ExtResource("2_e2xq8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4p7tf"]
+texture = ExtResource("3_oypcn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oc67w"]
+texture = ExtResource("3_oypcn")
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="play_button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -216.0
+offset_top = -48.0
+offset_right = 216.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_j6nls")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ysips")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1cqvv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4p7tf")
+theme_override_styles/normal = SubResource("StyleBoxTexture_oc67w")
+text = "Play"
+
+[node name="title_label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 83.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_j6nls")
+theme_override_font_sizes/font_size = 60
+text = "Clicker Game
+"

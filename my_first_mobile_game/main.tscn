@@ -63,18 +63,22 @@ text = "Score: 0
 
 [node name="time_left" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = -430.0
-offset_top = 104.0
+offset_top = -189.0
 offset_right = 430.0
-offset_bottom = 187.0
+offset_bottom = -106.0
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_cstba")
 theme_override_font_sizes/font_size = 60
-text = "time left: 0 seconds
+text = "Time left: 0 sec
 "
+horizontal_alignment = 1
 
 [node name="aim_score" type="Label" parent="."]
 layout_mode = 1
@@ -92,4 +96,8 @@ text = "aim score: 0
 "
 horizontal_alignment = 1
 
+[node name="time_left_timer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="time_left_timer" to="." method="_on_time_left_timer_timeout"]

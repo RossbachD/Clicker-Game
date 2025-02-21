@@ -11,8 +11,15 @@ config_version=5
 [application]
 
 config/name="my_first_mobile_game"
+run/main_scene="res://menu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+window/handheld/orientation=6
 
 [rendering]
 
